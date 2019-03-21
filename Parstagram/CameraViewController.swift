@@ -21,7 +21,20 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onTapCameraButton(_ sender: UITapGestureRecognizer) {
+       
+            let picker = UIImagePickerController()
+            picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            picker.allowsEditing = true
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                picker.sourceType = .camera
+            } else {
+                picker.sourceType = .photoLibrary
+            }
+            present(picker, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Posts")
         post ["caption"] = commentField.text!
@@ -43,17 +56,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
-    @IBAction func onCameraButton(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        picker.allowsEditing = true
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            picker.sourceType = .camera
-        } else {
-            picker.sourceType = .photoLibrary
-        }
-        present(picker, animated: true, completion: nil)
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage

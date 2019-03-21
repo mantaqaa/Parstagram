@@ -121,7 +121,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qL-3T-eWJ">
-                                                    <rect key="frame" x="8" y="8" width="370" height="313.5"/>
+                                                    <rect key="frame" x="8" y="8" width="370" height="323"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1qL-3T-eWJ" secondAttribute="height" multiplier="370:323" id="KnX-aV-Rdz"/>
                                                         <constraint firstAttribute="width" secondItem="1qL-3T-eWJ" secondAttribute="height" multiplier="370:323" id="Yni-DS-X0R"/>
@@ -190,6 +190,9 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="oSM-gS-FGH" appends="YES" id="rfb-a5-q5y"/>
+                                    <outletCollection property="gestureRecognizers" destination="oSM-gS-FGH" appends="YES" id="enP-j7-B1F"/>
+                                    <outletCollection property="gestureRecognizers" destination="oSM-gS-FGH" appends="YES" id="3LT-B6-crk"/>
+                                    <outletCollection property="gestureRecognizers" destination="oSM-gS-FGH" appends="YES" id="goD-bN-dnT"/>
                                 </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-Ev-ok7">
@@ -219,7 +222,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31g-A1-ze1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="oSM-gS-FGH">
                     <connections>
-                        <action selector="onCameraButton:" destination="YqP-ar-3XJ" id="HMg-x9-G8k"/>
+                        <action selector="onTapCameraButton:" destination="YqP-ar-3XJ" id="KgQ-Dn-Spr"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
